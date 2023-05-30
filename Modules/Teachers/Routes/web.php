@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
 Route::prefix('teachers')->group(function() {
-    Route::get('/', 'TeachersController@index');
+    Route::get('/', 'TeachersController@index')->name('teachers.index');
 });

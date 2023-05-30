@@ -1,9 +1,7 @@
-@extends('teachers::layouts.master')
+@extends('common.common')
 
-@section('content')
-    <h1>Hello World</h1>
+@section('card-header', 'Teachers Details')
 
-    <p>
-        This view is loaded from module: {!! config('teachers.name') !!}
-    </p>
+@section('card-body')
+
 @endsection

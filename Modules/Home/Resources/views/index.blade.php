@@ -18,7 +18,7 @@
                                 </div>
                             </a>
                             
-                            <a href="" class="text-decoration-none col-4">
+                            <a href="{{ route('teachers.index') }}" class="text-decoration-none col-4">
                                 <div class="card me-5 text-center  m-5 p-5 bg-secondary">
                                     <p class=" text-bold text-light"> Teacher Management </p>
                                 </div>
