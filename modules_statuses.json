@@ -2,5 +2,6 @@
     "Blog": true,
     "User": true,
     "Auth": true,
-    "Home": true
+    "Home": true,
+    "Teachers": true
 }
