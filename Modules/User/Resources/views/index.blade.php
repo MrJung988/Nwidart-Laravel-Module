@@ -13,9 +13,10 @@
             <div class="card-body">
                 @include('common.alert')
                 <div class="table-responsive">
+                    <p class="text-bold">All Users List</p>
                     <form action="{{ route('update.status') }}" method="POST">
                         @csrf
-                        <table class="table table-hover" id="myTable">
+                        <table class="table table-bordered" id="myTable" style="border-collapse: collapse; border-spacing: 0px; width: 100%;" role="grid" aria-describedby="datatable_info">
                             <thead>
                                 <tr>
                                     <th class="text-center">
@@ -29,6 +30,7 @@
                                     <th>Email</th>
                                     <th>Address</th>
                                     <th class="text-center">Status</th>
+                                    <th class="text-center">Generate Card</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -54,6 +56,12 @@
                                             <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
                                         </svg></p>
                                         @endif
+                                    </td>
+                                    <td class="text-center">
+                                        <form action="">
+                                            @csrf
+                                            <input type="submit" value="Print Card" class="btn btn-primary py-0 m-0 text-sm">
+                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach
