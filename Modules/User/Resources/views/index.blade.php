@@ -2,7 +2,7 @@
 
 @section('content')
   
-    <div class="container mt-5">
+    <div class="container mt-5 mb-5">
         <div class="card p-5">
             <div class="card-header">
                 <a href="{{ route('home') }}" class=""><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
@@ -11,10 +11,11 @@
                 <h1 class="text-center">User Details</h1>
             </div>
             <div class="card-body">
+                @include('common.alert')
                 <div class="table-responsive">
-                    <form action="POST" action="">
+                    <form action="{{ route('update.status') }}" method="POST">
                         @csrf
-                        <table class="table table-hover table-bordered">
+                        <table class="table table-hover" id="myTable">
                             <thead>
                                 <tr>
                                     <th class="text-center">
@@ -35,7 +36,7 @@
                                 <tr>
                                     <td class="text-center">
                                         <div class="checkbox" style="margin-top: 0px;margin-bottom: 0px;">
-                                            <input id="status-{{ $user->name }}" class="magic-checkbox users" type="checkbox" name="selected_user_id[]" value="{{ $user->id }}" {{ $user->status ? 'checked' : '' }}>
+                                            <input id="status-{{ $user->name }}" class="magic-checkbox users" type="checkbox" name="user_id[]" value="{{ $user->id }}" {{ $user->status ? 'checked' : '' }}>
                                             <label for="status-{{ $user->name }}" style="color: #000023;"></label>
                                         </div>
                                     </td>
@@ -58,6 +59,9 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        <div class="button">
+                            <input type="submit" name="submit" class="btn btn-info" value="Update User">
+                        </div>
                     </form>
                 </div>
             </div>
@@ -71,6 +75,15 @@
             $(this).closest('form').find('input.users').prop('checked', $(this).is(':checked'));
         });
     });
+</script>
+
+{{-- Data tables --}}
+<script>
+    
+    $(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+
 </script>
 @endpush
 

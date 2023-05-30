@@ -8,6 +8,9 @@
                 <div class="card-header">
                     <a href="{{ route('users.index') }}" class="btn btn-primary">Users Management</a>
                 </div>
+                <div class="card-body">
+                    
+                </div>
             </div>
         </div>
     </section>
