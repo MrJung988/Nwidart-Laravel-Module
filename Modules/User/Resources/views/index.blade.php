@@ -8,7 +8,7 @@
                 <a href="{{ route('home') }}" class=""><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
                 </svg></a>
-                <h1 class="text-center">Staff Details</h1>
+                <h1 class="text-center">User Details</h1>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -35,7 +35,8 @@
                                 <tr>
                                     <td class="text-center">
                                         <div class="checkbox" style="margin-top: 0px;margin-bottom: 0px;">
-                                            <input type="checkbox">
+                                            <input id="status-{{ $user->name }}" class="magic-checkbox users" type="checkbox" name="selected_user_id[]" value="{{ $user->id }}" {{ $user->status ? 'checked' : '' }}>
+                                            <label for="status-{{ $user->name }}" style="color: #000023;"></label>
                                         </div>
                                     </td>
                                     <td>{{ $user->id }}</td>
@@ -67,7 +68,7 @@
 <script type="text/javascript">
     $(function() {
         $('#select-all').click(function() {
-            $(this).closest('form').find('input.country').prop('checked', $(this).is(':checked'));
+            $(this).closest('form').find('input.users').prop('checked', $(this).is(':checked'));
         });
     });
 </script>
