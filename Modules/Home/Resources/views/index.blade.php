@@ -1,9 +1,15 @@
-@extends('home::layouts.master')
+@extends('main')
 
 @section('content')
-    <h1>Hello World</h1>
 
-    <p>
-        This view is loaded from module: {!! config('home.name') !!}
-    </p>
+    <section>
+        <div class="container mt-5">
+            <div class="card">
+                <div class="card-header">
+                    <a href="{{ route('users.index') }}" class="btn btn-primary">Users Management</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
 @endsection
