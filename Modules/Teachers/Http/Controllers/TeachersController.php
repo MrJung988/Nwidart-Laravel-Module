@@ -14,7 +14,10 @@ class TeachersController extends Controller
      */
     public function index()
     {
-        return view('teachers::index');
+        $data['back_button_route'] = route('home');
+        $data['heading'] = 'Teachers Details';
+        $data['header_button'] = route('teachers.create');
+        return view('teachers::index', $data);
     }
 
     /**
@@ -23,6 +26,9 @@ class TeachersController extends Controller
      */
     public function create()
     {
+        $data['back_button_route'] = route('teachers.create');
+        $data['heading'] = 'Teachers Details';
+        $data['header_button'] = false;
         return view('teachers::create');
     }
 
