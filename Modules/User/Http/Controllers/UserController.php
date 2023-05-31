@@ -20,6 +20,7 @@ class UserController extends Controller
         $data['back_button_route'] = route('home');
         $data['heading'] = 'Users Details';
         $data['header_button'] = false;
+        $data['breadcrumbs'] =   '<a href="' . route('home') . '" class="text-decoration-none text-muted">Home</a> / <a href="" class="" active> Users </a>';
 
         return view('user::index', $data);
     }

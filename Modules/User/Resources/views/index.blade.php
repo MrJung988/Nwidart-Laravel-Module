@@ -5,7 +5,6 @@
 @section('card-body')
 
     <div class="table-responsive">
-        <p class="text-bold">All Users List</p>
         <form action="{{ route('update.status') }}" method="POST">
             @csrf
             <table class="table table-bordered" id="myTable" style="border-collapse: collapse; border-spacing: 0px; width: 100%;" role="grid" aria-describedby="datatable_info">
@@ -50,10 +49,7 @@
                             @endif
                         </td>
                         <td class="text-center">
-                            <form action="">
-                                @csrf
-                                <input type="submit" value="Print Card" class="btn btn-primary py-0 m-0 text-sm">
-                            </form>
+                                <input type="submit" value="Print Card" class="btn btn-sm btn-primary py-0">
                         </td>
                     </tr>
                     @endforeach

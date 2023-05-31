@@ -16,6 +16,14 @@
                 @endif
             </div>
             <div class="card-body">
+                {{-- Breadcrumbs --}}
+                <nav class="d-flex">
+                    <h6 class="mb-1">
+                        <small class="text-muted">{!! $breadcrumbs !!}</small>
+                    </h6>
+                </nav>
+                {{-- Breadcrumbs --}}
+
                 @include('common.alert')
                 @yield('card-body')
             </div>
