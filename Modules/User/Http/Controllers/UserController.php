@@ -17,6 +17,8 @@ class UserController extends Controller
     public function index()
     {
         $data['users'] = User::all();
+        $data['back_button_route'] = route('home');
+        $data['header_button'] = false;
 
         return view('user::index', $data);
     }

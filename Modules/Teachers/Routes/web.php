@@ -15,4 +15,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('teachers')->group(function() {
     Route::get('/', 'TeachersController@index')->name('teachers.index');
+    Route::get('/create', 'TeachersController@create')->name('teachers.create');
 });
