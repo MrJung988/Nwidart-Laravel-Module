@@ -10,7 +10,7 @@
                 </svg></a>
                 <h3 class="text-center text-info">{{ $heading ?? '' }}</h3>
                 @if($header_button)
-                <div class=""><a href="{{ $header_button }}" class="btn btn-primary">Add Teacher</a></div>
+                <div class=""><a href="{{ $header_button }}" class="btn btn-primary">{{ $header_button_name }}</a></div>
                 @else
                 <div class=""></div>
                 @endif

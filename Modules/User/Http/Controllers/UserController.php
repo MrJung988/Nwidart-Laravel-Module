@@ -19,7 +19,8 @@ class UserController extends Controller
         $data['users'] = User::all();
         $data['back_button_route'] = route('home');
         $data['heading'] = 'Users Details';
-        $data['header_button'] = false;
+        $data['header_button'] = route('users.create');
+        $data['header_button_name'] = 'Add User';
         $data['breadcrumbs'] =   '<a href="' . route('home') . '" class="text-decoration-none text-muted">Home</a> / <a href="" class="" active> Users </a>';
 
         return view('user::index', $data);

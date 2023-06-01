@@ -17,6 +17,7 @@ class TeachersController extends Controller
         $data['back_button_route'] = route('home');
         $data['heading'] = 'Teachers Details';
         $data['header_button'] = route('teachers.create');
+        $data['header_button_name'] = 'Add Teacher';
         $data['breadcrumbs'] =   '<a href="' . route('home') . '" class="text-decoration-none text-muted">Home</a> / <a href="" class="" active> Teachers </a>';
 
         return view('teachers::index', $data);
