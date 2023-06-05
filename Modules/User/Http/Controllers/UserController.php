@@ -17,6 +17,7 @@ class UserController extends Controller
     public function index()
     {
         $data['users'] = User::all();
+        $data['title'] = 'Users Details';
         $data['back_button_route'] = route('home');
         $data['heading'] = 'Users Details';
         $data['header_button'] = route('users.create');
@@ -32,7 +33,13 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('user::create');
+        $data['title'] = 'User | Add';
+        $data['back_button_route'] = route('users.index');
+        $data['heading'] = 'Add New Users';
+        $data['header_button'] = false;
+        $data['breadcrumbs'] =   '<a href="' . route('home') . '" class="text-decoration-none text-muted">Home</a> / <a href="' . route('users.index') . '" class="text-decoration-none text-muted" active> Users </a> / <a href="" class="" active> Add New Users </a>';
+
+        return view('user::create', $data);
     }
 
     /**

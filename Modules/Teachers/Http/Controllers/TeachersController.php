@@ -14,6 +14,7 @@ class TeachersController extends Controller
      */
     public function index()
     {
+        $data['title'] = 'Teachers Details';
         $data['back_button_route'] = route('home');
         $data['heading'] = 'Teachers Details';
         $data['header_button'] = route('teachers.create');
@@ -29,6 +30,7 @@ class TeachersController extends Controller
      */
     public function create()
     {
+        $data['title'] = 'Teachers | Add';
         $data['back_button_route'] = route('teachers.index');
         $data['heading'] = 'Add New Teachers';
         $data['header_button'] = false;
