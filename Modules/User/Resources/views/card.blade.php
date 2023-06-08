@@ -48,7 +48,7 @@
 
     <div class="card idCard">
         <div class="header p-3 bg-primary">
-            <h2 class="text-center"> Employee ID Card </h2>
+            <h2 class="text-center"> User ID Card </h2>
             <h4 class="text-center">Company Name</h4>
         </div>
         <div class="image">
