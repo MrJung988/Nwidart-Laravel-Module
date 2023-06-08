@@ -63,3 +63,19 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 # Nwidart-Laravel-Module
+
+## Step to create QR code
+**Step 1:** Install package using following command
+> composer require simplesoftwareio/simple-qrcode
+
+**Step 2:** Add service provider in config/app.php
+> SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
+
+**Step 3:** Add alias in config/app.php
+> 'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
+
+**Step 4:** Use following code on view file
+> {{ QrCode::size(255)->generate('Your message')}}
+
+
+
