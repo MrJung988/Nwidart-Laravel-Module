@@ -58,7 +58,7 @@
                                 @endif
                             </td>
                             <td class="text-center">
-                                <a href=""><span class="badge text-bg-primary">Print Card</span></a>
+                                <a href="/test"><span class="badge text-bg-primary">Print Card</span></a>
                             </td>
                         </tr>
                     @endforeach

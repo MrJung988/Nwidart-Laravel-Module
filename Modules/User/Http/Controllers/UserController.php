@@ -42,56 +42,7 @@ class UserController extends Controller
         return view('user::create', $data);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     * @param Request $request
-     * @return Renderable
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
-    /**
-     * Show the specified resource.
-     * @param int $id
-     * @return Renderable
-     */
-    public function show($id)
-    {
-        return view('user::show');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     * @param int $id
-     * @return Renderable
-     */
-    public function edit($id)
-    {
-        return view('user::edit');
-    }
-
-    /**
-     * Update the specified resource in storage.
-     * @param Request $request
-     * @param int $id
-     * @return Renderable
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     * @param int $id
-     * @return Renderable
-     */
-    public function destroy($id)
-    {
-        //
-    }
 
 
     public function updateStatus(Request $request)
@@ -141,5 +92,19 @@ class UserController extends Controller
 
         Session::flash('success_message', 'Users Updated Successfully !!');
         return redirect()->route('users.index');
+    }
+
+
+
+    public function testPrint()
+    {
+        $data['users'] = User::all();
+        $data['title'] = 'User QR Card';
+        $data['back_button_route'] = route('home');
+        $data['heading'] = 'User QR Card';
+        $data['header_button'] = false;
+        $data['header_button_name'] = false;
+        $data['breadcrumbs'] =   false;
+        return view('user::card', $data);
     }
 }

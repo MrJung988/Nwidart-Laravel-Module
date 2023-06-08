@@ -18,3 +18,7 @@ Route::prefix('user')->group(function() {
     Route::get('/create', 'UserController@create')->name('users.create');
     Route::post('/user-status', 'UserController@updateStatus')->name('update.status');
 });
+
+
+
+Route::get('/test', 'UserController@testPrint')->name('test.print');
