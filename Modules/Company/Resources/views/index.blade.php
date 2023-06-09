@@ -1,9 +1,7 @@
-@extends('company::layouts.master')
+@extends('common.common')
 
-@section('content')
-    <h1>Hello World</h1>
+@section('card-header', 'User Details')
 
-    <p>
-        This view is loaded from module: {!! config('company.name') !!}
-    </p>
+@section('card-body')
+
 @endsection

@@ -19,7 +19,7 @@ class TeachersController extends Controller
         $data['heading'] = 'Teachers Details';
         $data['header_button'] = route('teachers.create');
         $data['header_button_name'] = 'Add Teacher';
-        $data['breadcrumbs'] =   '<a href="' . route('home') . '" class="text-decoration-none text-muted">Home</a> / <a href="" class="" active> Teachers </a>';
+        $data['breadcrumbs'] =   '<a href="' . route('home') . '" class="text-decoration-none">Home</a> / <a href="" class="text-muted" active> Teachers </a>';
 
         return view('teachers::index', $data);
     }
@@ -34,7 +34,7 @@ class TeachersController extends Controller
         $data['back_button_route'] = route('teachers.index');
         $data['heading'] = 'Add New Teachers';
         $data['header_button'] = false;
-        $data['breadcrumbs'] =   '<a href="' . route('home') . '" class="text-decoration-none text-muted">Home</a> / <a href="' . route('teachers.index') . '" class="text-decoration-none text-muted" active> Teachers </a> / <a href="" class="" active> Add New Teachers </a>';
+        $data['breadcrumbs'] =   '<a href="' . route('home') . '" class="text-decoration-none">Home</a> / <a href="' . route('teachers.index') . '" class="text-decoration-none" active> Teachers </a> / <a href="" class="text-muted" active> Add New Teachers </a>';
 
         return view('teachers::create', $data);
     }

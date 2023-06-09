@@ -11,6 +11,12 @@
                 <div class="card-body">
                     <div class="container">
                         <div class="row">
+                            <a href="{{ route('company.index') }}" class="text-decoration-none col-4">
+                                <div class="card me-5 text-center  m-5 p-5 bg-secondary">
+                                    <p class=" text-bold text-light"> Company Management </p>
+                                </div>
+                            </a>
+
                             <a href="{{ route('users.index') }}" class="text-decoration-none col-4">
                                 <div class="card me-5 text-center  m-5 p-5 bg-secondary">
                                     <p class=" text-bold text-light"> Users Management </p>

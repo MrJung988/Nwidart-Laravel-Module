@@ -11,6 +11,9 @@
 |
 */
 
-Route::prefix('company')->group(function() {
-    Route::get('/', 'CompanyController@index');
+use Illuminate\Support\Facades\Route;
+
+Route::group(['prefix' => 'company'], function() {
+    Route::get('/', 'CompanyController@index')->name('company.index');
+    Route::get('/create', 'CompanyController@index')->name('company.create');
 });

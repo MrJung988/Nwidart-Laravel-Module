@@ -23,7 +23,7 @@ class UserController extends Controller
         $data['heading'] = 'Users Details';
         $data['header_button'] = route('users.create');
         $data['header_button_name'] = 'Add User';
-        $data['breadcrumbs'] =   '<a href="' . route('home') . '" class="text-decoration-none text-muted">Home</a> / <a href="" class="" active> Users </a>';
+        $data['breadcrumbs'] =   '<a href="' . route('home') . '" class="text-decoration-non">Home</a> / <a href="" class="text-muted" active> Users </a>';
 
         return view('user::index', $data);
     }
@@ -39,7 +39,7 @@ class UserController extends Controller
         $data['back_button_route'] = route('users.index');
         $data['heading'] = 'Add New Users';
         $data['header_button'] = false;
-        $data['breadcrumbs'] =   '<a href="' . route('home') . '" class="text-decoration-none text-muted">Home</a> / <a href="' . route('users.index') . '" class="text-decoration-none text-muted" active> Users </a> / <a href="" class="" active> Add New Users </a>';
+        $data['breadcrumbs'] =   '<a href="' . route('home') . '" class="text-decoration-none">Home</a> / <a href="' . route('users.index') . '" class="text-decoration-none" active> Users </a> / <a href="" class="text-muted" active> Add New Users </a>';
 
         return view('user::create', $data);
     }
