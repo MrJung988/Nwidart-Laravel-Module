@@ -77,7 +77,7 @@
             </div>
             <div class="mt-n4 border border-5 border-light">
                 <p class="text-danger text-center">ID No. : C001</p>
-                {{ QrCode::size(100)->generate('Your message') }}
+                {{ QrCode::size(100)->generate( $user->id_no ) }}
             </div>
         </div>
         <div class="footer">
