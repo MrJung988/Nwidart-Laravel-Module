@@ -3,5 +3,6 @@
     "User": true,
     "Auth": true,
     "Home": true,
-    "Teachers": true
+    "Teachers": true,
+    "Company": true
 }
