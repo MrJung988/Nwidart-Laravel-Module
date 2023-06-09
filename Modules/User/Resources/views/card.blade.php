@@ -63,17 +63,17 @@
                 alt="" height="150" width="150">
         </div>
         <div class="d-flex flex-column text-center">
-            <h2 class="text-primary m-0">John Doe</h2>
-            <h4 class="text-danger m-0">CEO</h4>
+            <h2 class="text-primary m-0">{{ $user->name }}</h2>
+            <h4 class="text-danger m-0">{{ $user->designation }}</h4>
         </div>
         <div class="d-flex justify-content-between p-4 align-items-center">
             <div class="d-flex flex-column">
-                <p class="mb-0">Address : Pokhara</p>
-                <p class="mb-0">Contact No. : 9809809809</p>
-                <p class="mb-2">E-mail : johndoe@gmail.com</p>
-                <p class="mb-0 fw-bold"> Company Address</p>
-                <p class="mb-0">Tel : 023-555555</p>
-                <p class="mb-0">Email : company@gmail.com</p>
+                <p class="mb-0">Address : {{ $user->address }}</p>
+                <p class="mb-0">Contact No. : {{ $user->phone }}</p>
+                <p class="mb-2">E-mail : {{ $user->email }}</p>
+                <p class="mb-0 fw-bold"> {{ $user->address }}</p>
+                <p class="mb-0">Tel : {{ $user->companies->phone ?? 'N/A' }}</p>
+                <p class="mb-0">Email : {{ $user->companies->email ?? 'N/A' }}</p>
             </div>
             <div class="mt-n4 border border-5 border-light">
                 <p class="text-danger text-center">ID No. : C001</p>
@@ -81,7 +81,7 @@
             </div>
         </div>
         <div class="footer">
-            <p class="text-center">www.company.com.np</p>
+            <p class="text-center">{{ $user->companies->url ?? 'www.company.com.np' }}</p>
         </div>
     </div>
 

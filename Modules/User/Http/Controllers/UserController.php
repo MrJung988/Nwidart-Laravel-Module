@@ -95,16 +95,16 @@ class UserController extends Controller
     }
 
 
-
-    public function testPrint()
+    public function printCard($id)
     {
-        $data['users'] = User::all();
+        $data['user'] = User::find($id);
         $data['title'] = 'User QR Card';
         $data['back_button_route'] = route('home');
         $data['heading'] = 'User QR Card';
         $data['header_button'] = false;
         $data['header_button_name'] = false;
         $data['breadcrumbs'] =   false;
+
         return view('user::card', $data);
     }
 }

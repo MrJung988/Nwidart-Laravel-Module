@@ -48,7 +48,7 @@
                                 @endif
                             </td>
                             <td class="text-center">
-                                <a href="/test"><span class="badge text-bg-primary">Print Card</span></a>
+                                <a href="{{ route('users.cards', $user->id) }}"><span class="badge text-bg-primary">Print Card</span></a>
                             </td>
                         </tr>
                     @endforeach

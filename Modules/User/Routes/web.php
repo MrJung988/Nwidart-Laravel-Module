@@ -13,12 +13,10 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('user')->group(function() {
+Route::prefix('user')->group(function () {
     Route::get('/', 'UserController@index')->name('users.index');
     Route::get('/create', 'UserController@create')->name('users.create');
+    Route::get('/user-card-print/{id}', 'UserController@printCard')->name('users.cards');
     Route::post('/user-status', 'UserController@updateStatus')->name('update.status');
 });
 
-
-
-Route::get('/test', 'UserController@testPrint')->name('test.print');
