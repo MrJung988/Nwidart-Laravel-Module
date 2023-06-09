@@ -2,6 +2,7 @@
 
 namespace Modules\User\Http\Controllers;
 
+use App\Models\Company;
 use App\Models\User;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
@@ -33,6 +34,7 @@ class UserController extends Controller
      */
     public function create()
     {
+        $data['companies'] = Company::all();
         $data['title'] = 'User | Add';
         $data['back_button_route'] = route('users.index');
         $data['heading'] = 'Add New Users';

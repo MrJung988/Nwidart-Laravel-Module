@@ -71,13 +71,13 @@
                 <p class="mb-0">Address : {{ $user->address }}</p>
                 <p class="mb-0">Contact No. : {{ $user->phone }}</p>
                 <p class="mb-2">E-mail : {{ $user->email }}</p>
-                <p class="mb-0 fw-bold"> {{ $user->address }}</p>
+                <p class="mb-0 fw-bold"> Company Details </p>
                 <p class="mb-0">Tel : {{ $user->companies->phone ?? 'N/A' }}</p>
                 <p class="mb-0">Email : {{ $user->companies->email ?? 'N/A' }}</p>
             </div>
             <div class="mt-n4 border border-5 border-light">
                 <p class="text-danger text-center">ID No. : C001</p>
-                {{ QrCode::size(100)->generate( $user->id_no ) }}
+                {{ QrCode::size(100)->generate($user->id_no) }}
             </div>
         </div>
         <div class="footer">
