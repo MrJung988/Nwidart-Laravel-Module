@@ -14,8 +14,12 @@
         }
 
         .header {
-            height: 200px;
+            height: 225px;
             border-radius: 12px 12px 50% 50%;
+            box-shadow:
+                inset 0px -15px 0px #000000,
+                inset 0 -25px 0 white;
+            background-color: #002FA8;
         }
 
 
@@ -47,17 +51,20 @@
 @section('card-body')
 
     <div class="card idCard">
-        <div class="header p-3 bg-primary">
-            <h2 class="text-center"> User ID Card </h2>
-            <h4 class="text-center">Company Name</h4>
+        <div class="header p-3">
+            <center class="mt-3">
+                <img src="https://login.fonepay.com/assets/img/fonepay_payments_fatafat.png" alt="" height="auto"
+                    width="130">
+            </center>
+            <p class="text-center text-light tw-bold mt-4"> One Stop Solution for all your Financial Needs. </p>
         </div>
         <div class="image">
             <img src="https://media.istockphoto.com/id/1309328823/photo/headshot-portrait-of-smiling-male-employee-in-office.jpg?s=612x612&w=0&k=20&c=kPvoBm6qCYzQXMAn9JUtqLREXe9-PlZyMl9i-ibaVuY="
                 alt="" height="150" width="150">
         </div>
         <div class="d-flex flex-column text-center">
-            <h2 class="text-primary">John Doe</h2>
-            <h4 class="text-danger">CEO</h4>
+            <h2 class="text-primary m-0">John Doe</h2>
+            <h4 class="text-danger m-0">CEO</h4>
         </div>
         <div class="d-flex justify-content-between p-4 align-items-center">
             <div class="d-flex flex-column">
