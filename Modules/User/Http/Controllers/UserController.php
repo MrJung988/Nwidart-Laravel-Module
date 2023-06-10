@@ -137,7 +137,7 @@ class UserController extends Controller
         $user->status = true;
         $user->save();
 
-        return redirect()->route('users.index')->with('success_messsage', 'User created successfully.');
+        return redirect()->route('users.index')->with('success_message', 'User created successfully.');
     }
 
 
