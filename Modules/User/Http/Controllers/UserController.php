@@ -8,6 +8,7 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -97,9 +98,30 @@ class UserController extends Controller
     }
 
 
+    public function store(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required',
+            'address' => 'required',
+            'company_id' => 'required',
+            'designation' => 'required',
+        ]);
+
+        if ($request->hasFile('user_image')) {
+            $file = $request->file('user_image');
+            $file_name = 'user' . '-' . time() . '.' . $file->getClientOriginalExtension();
+            $path = $file->storeAs('public/users', $file_name);
+            $user_image = $file_name;
+        }
+    }
+
+
     public function printCard($id)
     {
-        $data['user'] = User::find($id);
+        $data['user'] = User::findOrFail($id);
+        // dd($data['user']);
         $data['title'] = 'User QR Card';
         $data['back_button_route'] = route('home');
         $data['heading'] = 'User QR Card';

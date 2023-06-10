@@ -53,7 +53,7 @@
     <div class="card idCard">
         <div class="header p-3">
             <center class="mt-3">
-                <img src="https://login.fonepay.com/assets/img/fonepay_payments_fatafat.png" alt="" height="auto"
+                <img src="{{ asset('storage/companies', $user->companies->logo ?? '') }}" alt="" height="auto"
                     width="130">
             </center>
             <p class="text-center text-light tw-bold mt-4"> One Stop Solution for all your Financial Needs. </p>

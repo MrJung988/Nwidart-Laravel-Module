@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('user')->group(function () {
     Route::get('/', 'UserController@index')->name('users.index');
     Route::get('/create', 'UserController@create')->name('users.create');
+    Route::post('/store', 'UserController@store')->name('users.store');
     Route::get('/user-card-print/{id}', 'UserController@printCard')->name('users.cards');
     Route::post('/user-status', 'UserController@updateStatus')->name('update.status');
 });
-

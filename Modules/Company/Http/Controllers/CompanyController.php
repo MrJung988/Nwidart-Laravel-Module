@@ -51,7 +51,7 @@ class CompanyController extends Controller
 
         if ($request->hasFile('company_logo')) {
             $file = $request->file('company_logo');
-            $filename = 'COM-' . time() . '-' . rand() . '.' . $file->getClientOriginalExtension();
+            $filename = 'com-' . time() . '-' . rand() . '.' . $file->getClientOriginalExtension();
             $path = $file->storeAs('public/companies', $filename);
             $logo_name = $filename;
         }
