@@ -47,7 +47,8 @@
                         </span>
                     </div>
                     <div class="col-6 mt-3">
-                        <select name="company_id" class="form-select" @error('name') is-invalid @enderror id="">
+                        <select name="company_id" class="form-select @error('company_id') is-invalid @enderror"
+                            id="">
                             <option value="">-- Select your company --</option>
                             @if (count($companies) > 0)
                                 @foreach ($companies as $company)

@@ -109,6 +109,10 @@ class UserController extends Controller
             'designation' => 'required',
         ]);
 
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator->errors());
+        }
+
         if ($request->hasFile('user_image')) {
             $file = $request->file('user_image');
             $file_name = 'user' . '-' . time() . '.' . $file->getClientOriginalExtension();
