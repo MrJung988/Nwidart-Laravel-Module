@@ -122,8 +122,6 @@ class UserController extends Controller
             $user_image = $file_name;
         }
 
-        dd($user_image);
-
         $new_code = new HelperUsers();
         $generated_user_code = $new_code->generateUniqueCode(3);
         $user_code = strtoupper($generated_user_code . '-' . rand());
