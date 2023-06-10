@@ -68,7 +68,13 @@
                         <input type="name" class="form-control" name="designation" placeholder="Enter your designation">
                     </div>
                     <div class="col-6 mt-3">
-                        <input type="file" class="form-control" name="user_image">
+                        <input type="file" class="form-control @error('user_image') is-invalid @enderror"
+                            name="user_image">
+                        <span class="text-danger small">
+                            @error('user_image')
+                                {{ $message }}
+                            @enderror
+                        </span>
                     </div>
                     <div class="col-6"></div>
                     <div class="col-4"></div>

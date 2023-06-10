@@ -103,11 +103,12 @@ class UserController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users',
             'phone' => 'required',
             'address' => 'required',
             'company_id' => 'required',
             'designation' => 'required',
+            'user_image' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -121,6 +122,8 @@ class UserController extends Controller
             $user_image = $file_name;
         }
 
+        dd($user_image);
+
         $new_code = new HelperUsers();
         $generated_user_code = $new_code->generateUniqueCode(3);
         $user_code = strtoupper($generated_user_code . '-' . rand());
@@ -133,7 +136,8 @@ class UserController extends Controller
         $user->company_id = $request->company_id;
         $user->designation = $request->designation;
         $user->user_code = $user_code;
-        $user->id_no = rand();
+        $user->user_image = $user_image;
+        $user->id_no = random_int(1111111, 9999999);
         $user->status = true;
         $user->save();
 
@@ -144,9 +148,8 @@ class UserController extends Controller
     public function printCard($id)
     {
         $data['user'] = User::findOrFail($id);
-        // dd($data['user']);
         $data['title'] = 'User QR Card';
-        $data['back_button_route'] = route('home');
+        $data['back_button_route'] = route('users.index');
         $data['heading'] = 'User QR Card';
         $data['header_button'] = false;
         $data['header_button_name'] = false;

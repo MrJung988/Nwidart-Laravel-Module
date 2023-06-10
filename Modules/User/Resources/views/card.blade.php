@@ -53,13 +53,12 @@
     <div class="card idCard">
         <div class="header p-3">
             <center class="mt-3">
-                <img src="{{ asset('storage/companies', $user->companies->logo ?? '') }}" alt="" height="auto"
-                    width="130">
+                <img src="{{ asset('storage/companies/' . $user->company->logo) }}" alt="" height="auto" width="130">
             </center>
             <p class="text-center text-light tw-bold mt-4"> One Stop Solution for all your Financial Needs. </p>
         </div>
         <div class="image">
-            <img src="https://media.istockphoto.com/id/1309328823/photo/headshot-portrait-of-smiling-male-employee-in-office.jpg?s=612x612&w=0&k=20&c=kPvoBm6qCYzQXMAn9JUtqLREXe9-PlZyMl9i-ibaVuY="
+            <img src="{{ asset('storage/users/' . $user->user_image) }}"
                 alt="" height="150" width="150">
         </div>
         <div class="d-flex flex-column text-center">
@@ -72,16 +71,16 @@
                 <p class="mb-0">Contact No. : {{ $user->phone }}</p>
                 <p class="mb-2">E-mail : {{ $user->email }}</p>
                 <p class="mb-0 fw-bold"> Company Details </p>
-                <p class="mb-0">Tel : {{ $user->companies->phone ?? 'N/A' }}</p>
-                <p class="mb-0">Email : {{ $user->companies->email ?? 'N/A' }}</p>
+                <p class="mb-0">Tel : {{ $user->company->phone ?? 'N/A' }}</p>
+                <p class="mb-0">Email : {{ $user->company->email ?? 'N/A' }}</p>
             </div>
             <div class="mt-n4 border border-5 border-light">
-                <p class="text-danger text-center">ID No. : C001</p>
-                {{ QrCode::size(100)->generate($user->id_no) }}
+                <p class="text-danger text-center">ID No. : {{ $user->id_no }}</p>
+                <span class="ms-2">{{ QrCode::size(100)->generate($user->id_no) }}</span>
             </div>
         </div>
         <div class="footer">
-            <p class="text-center">{{ $user->companies->url ?? 'www.company.com.np' }}</p>
+            <p class="text-center">{{ $user->company->url ?? 'www.company.com.np' }}</p>
         </div>
     </div>
 
