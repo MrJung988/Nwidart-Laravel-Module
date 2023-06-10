@@ -10,7 +10,9 @@
                 <div class="row mt-2">
                     <p class="bold">Enter Users Details:</p>
                     <div class="col-6 mt-3">
-                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Enter your name">
+                        <input type="text"
+                            class="form-control @error('name') is-invalid @enderror @error('name') is-invalid @enderror"
+                            name="name" placeholder="Enter your name">
                         <span class="text-danger small">
                             @error('name')
                                 {{ $message }}
@@ -18,7 +20,8 @@
                         </span>
                     </div>
                     <div class="col-6 mt-3">
-                        <input type="email" class="form-control" name="email" placeholder="Enter your email">
+                        <input type="email" class="form-control @error('email') is-invalid @enderror" name="email"
+                            placeholder="Enter your email">
                         <span class="text-danger small">
                             @error('name')
                                 {{ $message }}
@@ -26,7 +29,8 @@
                         </span>
                     </div>
                     <div class="col-6 mt-3">
-                        <input type="name" class="form-control" name="phone" placeholder="Enter your phone number">
+                        <input type="name" class="form-control @error('phone') is-invalid @enderror" name="phone"
+                            placeholder="Enter your phone number">
                         <span class="text-danger small">
                             @error('name')
                                 {{ $message }}
@@ -34,7 +38,8 @@
                         </span>
                     </div>
                     <div class="col-6 mt-3">
-                        <input type="name" class="form-control" name="address" placeholder="Enter your address">
+                        <input type="name" class="form-control @error('address') is-invalid @enderror" name="address"
+                            placeholder="Enter your address">
                         <span class="text-danger small">
                             @error('name')
                                 {{ $message }}
@@ -42,7 +47,7 @@
                         </span>
                     </div>
                     <div class="col-6 mt-3">
-                        <select name="company_id" class="form-select" id="">
+                        <select name="company_id" class="form-select" @error('name') is-invalid @enderror id="">
                             <option value="">-- Select your company --</option>
                             @if (count($companies) > 0)
                                 @foreach ($companies as $company)
