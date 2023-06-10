@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
+use App\Helpers\Users as HelperUsers;
 
 class UserController extends Controller
 {
@@ -119,6 +120,24 @@ class UserController extends Controller
             $path = $file->storeAs('public/users', $file_name);
             $user_image = $file_name;
         }
+
+        $new_code = new HelperUsers();
+        $generated_user_code = $new_code->generateUniqueCode(3);
+        $user_code = strtoupper($generated_user_code . '-' . rand());
+
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->address = $request->address;
+        $user->company_id = $request->company_id;
+        $user->designation = $request->designation;
+        $user->user_code = $user_code;
+        $user->id_no = rand();
+        $user->status = true;
+        $user->save();
+
+        return redirect()->route('users.index')->with('success_messsage', 'User created successfully.');
     }
 
 
