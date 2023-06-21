@@ -4,5 +4,6 @@
     "Auth": true,
     "Home": true,
     "Teachers": true,
-    "Company": true
+    "Company": true,
+    "OTP": true
 }
