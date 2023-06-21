@@ -14,7 +14,14 @@ class OTPController extends Controller
      */
     public function index()
     {
-        return view('otp::index');
+        $data['title'] = 'Send a OTP';
+        $data['back_button_route'] = route('home');
+        $data['heading'] = 'Send a OTP';
+        $data['header_button'] = false;
+        // $data['header_button_name'] = 'Add User';
+        $data['breadcrumbs'] =   '<a href="' . route('home') . '" class="text-decoration-non">Home</a> / <a href="" class="text-muted" active> OTP </a>';
+
+        return view('otp::index', $data);
     }
 
     /**

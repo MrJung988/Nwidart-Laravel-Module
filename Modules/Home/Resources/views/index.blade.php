@@ -35,9 +35,9 @@
                                 </div>
                             </a>
 
-                            <a href="" class="text-decoration-none col-4">
+                            <a href="{{ route('otp.send') }}" class="text-decoration-none col-4">
                                 <div class="card me-5 text-center  m-5 p-5 bg-secondary">
-                                    <p class=" text-bold text-light"> Test Module </p>
+                                    <p class=" text-bold text-light"> Send OTP </p>
                                 </div>
                             </a>
 
