@@ -13,26 +13,30 @@
                     <div class="form-group">
                         <label for="">Mobile Number:</label>
                         <input type="text" name="mobile" id="mobile" class="form-control"
-                            placeholder="Enter your mobile number">
+                            placeholder="+977 9816641520">
                     </div>
                     <div class="form-group mt-4">
                         <label for="">Recaptcha:</label>
-                        <div id="recaptcha-container" onclick=""></div>
+                        <div id="recaptcha-container"></div>
                     </div>
                     <div class="mt-5">
-                        <button type="button" class="btn btn-dark w-100">Send Code</button>
+                        <button type="button" class="btn btn-dark w-100" onclick="sendCode()">Send Code</button>
                     </div>
                 </form>
+                <div id="error" style="color: red; display:none;"></div>
+                <div id="sentMessage" style="color:green; display:none;"></div>
             </div>
         </div>
     </div>
 @endsection
 
 @push('js')
-    {{-- Firebase Cdn --}}
-    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+{{-- Firebase Cdn --}}
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
 
-    <script>
+
+<script>
         var firebaseConfig = {
             apiKey: "AIzaSyDKoNINujmNaTBq7ZJcBDSek1riSFbjTuI",
             authDomain: "otp-test-b64e3.firebaseapp.com",
@@ -49,13 +53,29 @@
     </script>
 
     <script type="text/javascript">
-        window.onload = function(){
+        window.onload = function() {
             render();
         }
 
         function render() {
-            window.recaptchaVerifier = new firebase.auth.recaptchaVerifier('recaptcha-container');
+            window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
             recaptchaVerifier.render();
+        }
+
+        function sendCode() {
+            var number = $('#mobile').val();
+
+            firebase.auth().signInWithPhoneNumber(number, window.recaptchaVerifier).then(function(confirmationResult) {
+                window.confirmationResult = confirmationResult;
+                coderesult = confirmationResult;
+
+                $(#sentMessage).text('Message sent successfully !');
+                $(#sentMessage).show
+
+            }).catch(function(error){
+                $(#error).text(error.message);
+                $(#error).show();
+            });
         }
     </script>
 @endpush
