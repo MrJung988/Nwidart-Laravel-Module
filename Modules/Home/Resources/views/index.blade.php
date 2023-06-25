@@ -43,7 +43,7 @@
 
                             <a href="" class="text-decoration-none col-4">
                                 <div class="card me-5 text-center  m-5 p-5 bg-secondary">
-                                    <p class=" text-bold text-light"> Test Module </p>
+                                    <p class=" text-bold text-light"> Guzzle http </p>
                                 </div>
                             </a>
 

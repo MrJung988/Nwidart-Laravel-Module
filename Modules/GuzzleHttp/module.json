@@ -1,0 +1,13 @@
+{
+    "name": "GuzzleHttp",
+    "alias": "guzzlehttp",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\GuzzleHttp\\Providers\\GuzzleHttpServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
