@@ -41,7 +41,7 @@
                                 </div>
                             </a>
 
-                            <a href="" class="text-decoration-none col-4">
+                            <a href="{{ route('guzzlehttp') }}" class="text-decoration-none col-4">
                                 <div class="card me-5 text-center  m-5 p-5 bg-secondary">
                                     <p class=" text-bold text-light"> Guzzle http </p>
                                 </div>

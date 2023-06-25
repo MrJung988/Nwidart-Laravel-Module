@@ -1,6 +1,6 @@
-@extends('guzzlehttp::layouts.master')
+@extends('common.common')
 
-@section('content')
+@section('card-body')
     <h1>Hello World</h1>
 
     <p>
