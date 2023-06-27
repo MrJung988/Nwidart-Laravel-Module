@@ -129,3 +129,40 @@ Collective\Html\HtmlServiceProvider::class,
     //
 {!! Form::close() !!}
 ```
+
+## Steps to use laravel-ui
+
+**Step 1:**Install package using composer:
+
+```
+composer require laravel/ui
+```
+
+**Step 2:** Run the command below:
+
+````
+// Generate basic scaffolding...
+php artisan ui bootstrap
+php artisan ui vue
+php artisan ui react
+
+
+OR
+// Generate login / registration scaffolding...
+php artisan ui bootstrap --auth
+php artisan ui vue --auth
+php artisan ui react --auth```
+````
+
+**Step 3:** Run the command below:
+
+```
+npm install && npm run dev
+
+```
+
+**Step 4:** Run the command below to install additional dependencies:
+
+```
+npm install resolve-url-loader@^5.0.0 --save-dev --legacy-peer-
+```
