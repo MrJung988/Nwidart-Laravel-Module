@@ -100,3 +100,32 @@ protected $routeMiddleware = [
     'role_or_permission' => \Spatie\Permission\Middlewares\RoleOrPermissionMiddleware::class,
 ];
 ```
+
+## Steps to use laravel-collective/html
+
+**Step 1:** Install package using composer
+
+```
+composer require laravelcollective/html
+```
+
+**Step 2:** Add service provider in config/app.php
+
+```
+Collective\Html\HtmlServiceProvider::class,
+```
+
+**Step 3:** Add alias in config/app.php
+
+```
+'Form' => Collective\Html\FormFacade::class,
+'Html' => Collective\Html\HtmlFacade::class,
+```
+
+**Step 4:** Use following code on view file
+
+```
+{!! Form::open(['url' => 'foo/bar']) !!}
+    //
+{!! Form::close() !!}
+```
