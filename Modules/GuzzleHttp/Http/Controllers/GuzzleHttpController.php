@@ -12,8 +12,9 @@ class GuzzleHttpController extends Controller
     public function index()
     {
         $fakeData = Http::get('https://reqres.in/api/users?page=2');
-        return json_decode($fakeData);
-        // dd($fakeData->json());
+        // $test = json_decode($fakeData);
+        // dd($test);
+        dd($fakeData->json());
 
 
         $data['title'] = 'Guzzle Http';
