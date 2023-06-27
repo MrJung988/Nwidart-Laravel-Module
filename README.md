@@ -166,3 +166,9 @@ npm install && npm run dev
 ```
 npm install resolve-url-loader@^5.0.0 --save-dev --legacy-peer-
 ```
+
+**Step 5:** Run the command below to avoid production every time:
+
+```
+npm run watch
+```
