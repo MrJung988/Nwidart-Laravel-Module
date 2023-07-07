@@ -2,6 +2,7 @@
 
 namespace Modules\Blog\Http\Controllers;
 
+use App\Models\Blog;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -14,7 +15,14 @@ class BlogController extends Controller
      */
     public function index()
     {
-        return view('blog::index');
+        // $data['blogs'] = Blog::all();
+        $data['title'] = 'Blogs';
+        $data['back_button_route'] = false;
+        $data['heading'] = 'Users Details';
+        $data['header_button'] = route('users.create');
+        $data['header_button_name'] = 'Add Blog';
+        $data['breadcrumbs'] =   '<a href="' . route('home') . '" class="text-decoration-none">Home</a> / <a href="" class="text-muted" active> Blogs </a>';
+        return view('blog::index', $data);
     }
 
     /**

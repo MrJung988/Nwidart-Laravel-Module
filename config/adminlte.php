@@ -317,6 +317,11 @@ return [
             'icon'        => 'fas fa-fw fa-tachometer-alt',
         ],
         [
+            'text'        => 'Blog',
+            'route'         => 'blog.index',
+            'icon'        => 'fas fa-fw fa-blog',
+        ],
+        [
             'text'        => 'Company Management',
             'route'         => 'company.index',
             'icon'        => 'fas fa-fw fa-building',

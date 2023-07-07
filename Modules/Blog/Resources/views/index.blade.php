@@ -1,4 +1,4 @@
-@extends('blog::layouts.master')
+@extends('common.common')
 
 @section('content')
     <h1>Hello World</h1>
