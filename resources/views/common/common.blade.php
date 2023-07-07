@@ -1,7 +1,7 @@
-@extends('main')
+@extends('adminlte::page')
 
 @section('content')
-    <div class="container mt-5 mb-5">
+    <div class="container">
         <div class="card">
             <div class="card-header d-flex justify-content-between py-4">
                 <a href="{{ $back_button_route ?? '' }}" class=""><svg xmlns="http://www.w3.org/2000/svg" width="30"

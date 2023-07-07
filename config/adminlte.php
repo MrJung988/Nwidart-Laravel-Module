@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'Practice Laravel',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Practice</b>TEST',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -107,7 +107,7 @@ return [
     */
 
     'preloader' => [
-        'enabled' => true,
+        'enabled' => false,
         'img' => [
             'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
             'alt' => 'AdminLTE Preloader Image',
@@ -150,8 +150,8 @@ return [
 
     'layout_topnav' => null,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
-    'layout_fixed_navbar' => null,
+    'layout_fixed_sidebar' => true,
+    'layout_fixed_navbar' => true,
     'layout_fixed_footer' => null,
     'layout_dark_mode' => null,
 
@@ -312,11 +312,29 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'text'        => 'Dashboard',
+            'route'         => 'admin.dashboard',
+            'icon'        => 'fas fa-fw fa-tachometer-alt',
+        ],
+        [
+            'text'        => 'Company Management',
+            'route'         => 'company.index',
+            'icon'        => 'fas fa-fw fa-building',
+        ],
+        [
+            'text'        => 'Users Management',
+            'route'         => 'users.index',
+            'icon'        => 'fas fa-fw fa-user',
+        ],
+        [
+            'text'        => 'Send OTP',
+            'route'         => 'otp.send',
+            'icon'        => 'fas fa-fw fa-wave-square',
+        ],
+        [
+            'text'        => 'Guzzle Http',
+            'route'         => 'guzzlehttp',
+            'icon'        => 'fas fa-fw fa-water',
         ],
         ['header' => 'account_settings'],
         [

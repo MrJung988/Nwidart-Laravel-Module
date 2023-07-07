@@ -11,6 +11,6 @@
 |
 */
 
-Route::prefix('/')->group(function() {
-    Route::get('/', 'HomeController@index')->name('home');
+Route::prefix('/')->group(function () {
+    Route::get('/', 'HomeController@index')->name('admin.dashboard');
 });
