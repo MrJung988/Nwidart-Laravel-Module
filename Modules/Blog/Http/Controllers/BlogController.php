@@ -6,6 +6,7 @@ use App\Models\Blog;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use DataTables;
 
 class BlogController extends Controller
 {
@@ -23,6 +24,24 @@ class BlogController extends Controller
         $data['header_button_name'] = 'Add Blog';
         $data['breadcrumbs'] =   '<a href="' . route('home') . '" class="text-decoration-none">Home</a> / <a href="" class="text-muted" active> Blogs </a>';
         return view('blog::index', $data);
+    }
+
+
+    public function getBlog(Request $request)
+    {
+        if ($request->ajax()) {
+            $data = Blog::latest()->get();
+
+            return DataTables::of($data)
+                ->addIndexColumn()
+                ->addColumn('action', function ($row) {
+                    $actionBtn = '<a href="javascript.void(0);" class="edit btn btn-success btn-sm">Edit</a> <a href="javascript.void(0);" class="edit btn btn-danger btn-sm">Delete</a>';
+
+                    return $actionBtn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
     }
 
     /**
