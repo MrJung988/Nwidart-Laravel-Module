@@ -12,6 +12,8 @@
                     <th>Action</th>
                 </tr>
             </thead>
+            <tbody>
+            </tbody>
         </table>
     </section>
 @endsection
