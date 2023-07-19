@@ -1,27 +1,20 @@
 @extends('common.common')
 
-@section('content')
+@section('card-body')
     <section class="container mt-5">
-        <div class="card">
-            <div class="card-header">
-                <h1>Blog</h1>
-            </div>
-            <div class="card-body">
-                <table class="table table-hover yajra-datatables">
-                    <thead>
-                        <tr>
-                            <th>S.N.</th>
-                            <th>Title</th>
-                            <th>Slug</th>
-                            <th>Keywords</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+        <table class="table table-hover yajra-datatables">
+            <thead>
+                <tr>
+                    <th>S.N.</th>
+                    <th>Title</th>
+                    <th>Slug</th>
+                    <th>Keywords</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
     </section>
 @endsection
 

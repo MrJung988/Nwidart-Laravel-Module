@@ -14,7 +14,6 @@ class CompanyController extends Controller
     {
         $data['companies'] = Company::all();
         $data['title'] = 'Company Details';
-        $data['back_button_route'] = route('home');
         $data['heading'] = 'Company Details';
         $data['header_button'] = route('company.create');
         $data['header_button_name'] = 'Add New Company';

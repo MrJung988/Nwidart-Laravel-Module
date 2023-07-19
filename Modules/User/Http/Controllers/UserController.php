@@ -21,7 +21,6 @@ class UserController extends Controller
     {
         $data['users'] = User::all();
         $data['title'] = 'Users Details';
-        $data['back_button_route'] = route('home');
         $data['heading'] = 'Users Details';
         $data['header_button'] = route('users.create');
         $data['header_button_name'] = 'Add User';

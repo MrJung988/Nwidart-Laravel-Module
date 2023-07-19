@@ -15,7 +15,6 @@ class OTPController extends Controller
     public function index()
     {
         $data['title'] = 'Send a OTP';
-        $data['back_button_route'] = route('home');
         $data['heading'] = 'Send a OTP';
         $data['header_button'] = false;
         $data['breadcrumbs'] =   '<a href="' . route('home') . '" class="text-decoration-none">Home</a> / <a href="" class="text-muted" active> OTP </a>';
