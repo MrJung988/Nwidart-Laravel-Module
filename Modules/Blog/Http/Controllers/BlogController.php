@@ -25,7 +25,7 @@ class BlogController extends Controller
         $data['breadcrumbs'] =   '<a href="' . route('home') . '" class="text-decoration-none">Home</a> / <a href="" class="text-muted" active> Blogs </a>';
         return view('blog::index', $data);
     }
-    
+
     /**
      * Show the form for creating a new resource.
      * @return Renderable

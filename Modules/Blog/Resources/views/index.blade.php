@@ -1,29 +1,36 @@
 @extends('common.common')
 
 @section('content')
-    <section class="container mt -5">
-        <table class="table table-hover yajra-datatables">
-            <thead>
-                <tr>
-                    <th>S.N.</th>
-                    <th>Title</th>
-                    <th>Slug</th>
-                    <th>Keywords</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
+    <section class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                <h1>Blog</h1>
+            </div>
+            <div class="card-body">
+                <table class="table table-hover yajra-datatables">
+                    <thead>
+                        <tr>
+                            <th>S.N.</th>
+                            <th>Title</th>
+                            <th>Slug</th>
+                            <th>Keywords</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </section>
 @endsection
 
 @push('css')
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    {{-- <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"> --}}
 @endpush
 
 @push('js')
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 
     <script type="text/javascript">
@@ -39,5 +46,5 @@
                 }
             })
         });
-    </script>
+    </script> --}}
 @endpush
