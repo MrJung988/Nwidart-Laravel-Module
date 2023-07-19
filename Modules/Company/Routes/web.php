@@ -13,7 +13,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::group(['prefix' => 'company'], function() {
+Route::group(['prefix' => 'company', 'middleware' => 'auth'], function () {
     Route::get('/', 'CompanyController@index')->name('company.index');
     Route::get('/create', 'CompanyController@create')->name('company.create');
     Route::post('/store', 'CompanyController@store')->name('company.store');

@@ -4,6 +4,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('guzzlehttp')->group(function() {
+Route::group(['prefix' => 'guzzlehttp', 'middleware' => 'auth'], function () {
     Route::get('/', 'GuzzleHttpController@index')->name('guzzlehttp');
 });

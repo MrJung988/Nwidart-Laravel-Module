@@ -13,7 +13,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('user')->group(function () {
+Route::group(['prefix' => 'user', 'middleware' => 'auth'], function () {
     Route::get('/', 'UserController@index')->name('users.index');
     Route::get('/create', 'UserController@create')->name('users.create');
     Route::post('/store', 'UserController@store')->name('users.store');

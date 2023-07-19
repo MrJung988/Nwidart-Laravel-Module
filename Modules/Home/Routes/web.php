@@ -11,6 +11,8 @@
 |
 */
 
-Route::prefix('/')->group(function () {
+use Illuminate\Support\Facades\Route;
+
+Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
     Route::get('/', 'HomeController@index')->name('admin.dashboard');
 });

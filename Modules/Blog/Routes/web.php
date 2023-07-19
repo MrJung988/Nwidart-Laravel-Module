@@ -11,6 +11,8 @@
 |
 */
 
-Route::prefix('blog')->group(function() {
+use Illuminate\Support\Facades\Route;
+
+Route::group(['prefix' => 'blog', 'middleware' => 'auth'], function () {
     Route::get('/', 'BlogController@index')->name('blog.index');
 });
