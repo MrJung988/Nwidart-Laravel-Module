@@ -25,25 +25,7 @@ class BlogController extends Controller
         $data['breadcrumbs'] =   '<a href="' . route('home') . '" class="text-decoration-none">Home</a> / <a href="" class="text-muted" active> Blogs </a>';
         return view('blog::index', $data);
     }
-
-
-    // public function getBlog(Request $request)
-    // {
-    //     if ($request->ajax()) {
-    //         $data = Blog::latest()->get();
-
-    //         return DataTables::of($data)
-    //             ->addIndexColumn()
-    //             ->addColumn('action', function ($row) {
-    //                 $actionBtn = '<a href="javascript.void(0);" class="edit btn btn-success btn-sm">Edit</a> <a href="javascript.void(0);" class="edit btn btn-danger btn-sm">Delete</a>';
-
-    //                 return $actionBtn;
-    //             })
-    //             ->rawColumns(['action'])
-    //             ->make(true);
-    //     }
-    // }
-
+    
     /**
      * Show the form for creating a new resource.
      * @return Renderable
