@@ -337,6 +337,11 @@ return [
             'icon'        => 'fas fa-fw fa-wave-square',
         ],
         [
+            'text'        => 'Test OTP',
+            'route'         => 'otp.test',
+            'icon'        => 'fas fa-fw fa-wave-square',
+        ],
+        [
             'text'        => 'Guzzle Http',
             'route'         => 'guzzlehttp',
             'icon'        => 'fas fa-fw fa-water',

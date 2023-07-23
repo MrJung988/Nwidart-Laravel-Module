@@ -31,12 +31,13 @@
 @endsection
 
 @push('js')
-{{-- Firebase Cdn --}}
-<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    {{-- Firebase Cdn --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
 
 
-<script>
+    <script>
         var firebaseConfig = {
             apiKey: "AIzaSyDKoNINujmNaTBq7ZJcBDSek1riSFbjTuI",
             authDomain: "otp-test-b64e3.firebaseapp.com",
@@ -69,12 +70,12 @@
                 window.confirmationResult = confirmationResult;
                 coderesult = confirmationResult;
 
-                $(#sentMessage).text('Message sent successfully !');
-                $(#sentMessage).show
+                $("#sentMessage").text('Message sent successfully !');
+                $("#sentMessage").show();
 
-            }).catch(function(error){
-                $(#error).text(error.message);
-                $(#error).show();
+            }).catch(function(error) {
+                $("#error").text(error.message);
+                $("#error").show();
             });
         }
     </script>

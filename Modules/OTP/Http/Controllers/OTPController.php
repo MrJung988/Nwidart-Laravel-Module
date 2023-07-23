@@ -22,6 +22,17 @@ class OTPController extends Controller
         return view('otp::index', $data);
     }
 
+
+    public function test()
+    {
+        $data['title'] = 'Test OTP';
+        $data['heading'] = 'Test OTP';
+        $data['header_button'] = false;
+        $data['breadcrumbs'] =   '<a href="' . route('home') . '" class="text-decoration-none">Home</a> / <a href="" class="text-muted" active> OTP </a>';
+
+        return view('otp::test-otp', $data);
+    }
+
     /**
      * Show the form for creating a new resource.
      * @return Renderable

@@ -77,7 +77,7 @@ class UserController extends Controller
         foreach ($selected_users_id as $selected_user_id) {
             if ($selected_user_id) {
                 $user = User::find($selected_user_id);
-                $user->status = 1;
+                $user->status = 'active';
                 $user->updated_at = date('Y-m-d H:i:s');
                 $user->save();
             }
@@ -87,7 +87,7 @@ class UserController extends Controller
         foreach ($unselected_users_id as $unselected_user_id) {
             if ($unselected_user_id) {
                 $user = User::find($unselected_user_id);
-                $user->status = 0;
+                $user->status = 'inactive';
                 $user->updated_at = date('Y-m-d H:i:s');
                 $user->save();
             }
@@ -102,6 +102,7 @@ class UserController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required',
+            'password' => 'required',
             'email' => 'required|email|unique:users',
             'phone' => 'required',
             'address' => 'required',
@@ -127,6 +128,7 @@ class UserController extends Controller
 
         $user = new User();
         $user->name = $request->name;
+        $user->password = bcrypt($request->password);
         $user->email = $request->email;
         $user->phone = $request->phone;
         $user->address = $request->address;

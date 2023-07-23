@@ -32,7 +32,7 @@
                             <td class="text-center">
                                 <div class="checkbox" style="margin-top: 0px;margin-bottom: 0px;">
                                     <input id="status-{{ $user->name }}" class="magic-checkbox users" type="checkbox"
-                                        name="user_id[]" value="{{ $user->id }}" {{ $user->status ? 'checked' : '' }}>
+                                        name="user_id[]" value="{{ $user->id }}" {{ $user->status  == 'active' ? 'checked' : '' }}>
                                     <label for="status-{{ $user->name }}" style="color: #000023;"></label>
                                 </div>
                             </td>
@@ -41,9 +41,9 @@
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->address }}</td>
                             <td class="text-center">
-                                @if ($user->status == 1)
+                                @if ($user->status == 'active')
                                     <span class="badge text-bg-success">Active</span>
-                                @elseif ($user->status == 0)
+                                @elseif ($user->status == 'inactive')
                                     <span class="badge text-bg-danger">Inactive</span>
                                 @endif
                             </td>

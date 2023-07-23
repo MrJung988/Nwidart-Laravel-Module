@@ -17,14 +17,14 @@
         <div class="card">
             <div class="card-header">
                 <div class="card-header bg-light d-flex justify-content-between align-items-center">
-                    <span class="card-title">
+                    <div class="card-title">
                         @isset($back_button_route)
                             <a href="{{ $back_button_route }}">
                                 <i class="fas fa-arrow-left"></i>
                             </a>
                         @endisset
                         <h5 class="mt-1 mb-n2">{{ $heading }}</h5>
-                    </span>
+                    </div>
                     @if ($header_button)
                         <div class="" style="position: absolute; right: 1%;"><span><a href="{{ $header_button }}"
                                     class="btn btn-primary"><i class="fas fa-plus"></i>

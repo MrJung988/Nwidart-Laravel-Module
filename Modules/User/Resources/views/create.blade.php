@@ -20,28 +20,38 @@
                         </span>
                     </div>
                     <div class="col-6 mt-3">
+                        <input type="text"
+                            class="form-control @error('password') is-invalid @enderror @error('password') is-invalid @enderror"
+                            name="password" placeholder="Enter your Password">
+                        <span class="text-danger small">
+                            @error('password')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                    </div>
+                    <div class="col-6 mt-3">
                         <input type="email" class="form-control @error('email') is-invalid @enderror" name="email"
                             placeholder="Enter your email">
                         <span class="text-danger small">
-                            @error('name')
+                            @error('email')
                                 {{ $message }}
                             @enderror
                         </span>
                     </div>
                     <div class="col-6 mt-3">
-                        <input type="name" class="form-control @error('phone') is-invalid @enderror" name="phone"
+                        <input type="phone" class="form-control @error('phone') is-invalid @enderror" name="phone"
                             placeholder="Enter your phone number">
                         <span class="text-danger small">
-                            @error('name')
+                            @error('phone')
                                 {{ $message }}
                             @enderror
                         </span>
                     </div>
                     <div class="col-6 mt-3">
-                        <input type="name" class="form-control @error('address') is-invalid @enderror" name="address"
+                        <input type="address" class="form-control @error('address') is-invalid @enderror" name="address"
                             placeholder="Enter your address">
                         <span class="text-danger small">
-                            @error('name')
+                            @error('address')
                                 {{ $message }}
                             @enderror
                         </span>
@@ -59,13 +69,13 @@
                             @endif
                         </select>
                         <span class="text-danger small">
-                            @error('name')
+                            @error('company_id')
                                 {{ $message }}
                             @enderror
                         </span>
                     </div>
                     <div class="col-6 mt-3">
-                        <input type="name" class="form-control" name="designation" placeholder="Enter your designation">
+                        <input type="text" class="form-control" name="designation" placeholder="Enter your designation">
                     </div>
                     <div class="col-6 mt-3">
                         <input type="file" class="form-control @error('user_image') is-invalid @enderror"
@@ -76,11 +86,9 @@
                             @enderror
                         </span>
                     </div>
-                    <div class="col-6"></div>
-                    <div class="col-4"></div>
-                    <div class="text-center col-4 mt-3">
-                        <button type="submit" class="btn btn-info  w-100">Save</button>
-                    </div>
+                </div>
+                <div class="text-center mt-3">
+                    <button type="submit" class="btn btn-info col-3">Save</button>
                 </div>
             </div>
         </form>

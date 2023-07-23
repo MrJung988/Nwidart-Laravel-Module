@@ -15,4 +15,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'otp', 'middleware' => 'auth'], function () {
     Route::get('/', 'OTPController@index')->name('otp.send');
+    Route::get('/test', 'OTPController@test')->name('otp.test');
 });
