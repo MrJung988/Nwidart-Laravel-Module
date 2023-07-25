@@ -14,15 +14,17 @@ class UserSeed extends Seeder
      */
     public function run()
     {
-        User::create([
-            'name' => 'Samir Karki',
+        User::firstOrCreate([
             'email' => 'samir@gmail.com',
-            'address' => 'Pokhara',
+        ], [
+            'name' => 'Samir Karki',
+            'password' => bcrypt('admin123'),
             'phone' => '9876541230',
+            'address' => 'Pokhara',
             'user_code' => 'COM-001',
-            'id_no' => '2302',
+            'id_no' => '23021',
             'company_id' => 1,
-            'status' => 0,
+            'status' => 'active',
         ]);
     }
 }

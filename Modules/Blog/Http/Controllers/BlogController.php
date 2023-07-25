@@ -14,8 +14,12 @@ class BlogController extends Controller
      * Display a listing of the resource.
      * @return Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->ajax()) {
+            $data = Blog::all();
+            dd($data);
+        }
         // $data['blogs'] = Blog::all();
         $data['title'] = 'Blogs';
         $data['heading'] = 'Blog';
