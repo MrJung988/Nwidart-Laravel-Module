@@ -6,7 +6,7 @@ use App\Models\Blog;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use DataTables;
+use Yajra\DataTables\DataTables;
 
 class BlogController extends Controller
 {
@@ -18,7 +18,21 @@ class BlogController extends Controller
     {
         if ($request->ajax()) {
             $data = Blog::all();
-            dd($data);
+            return DataTables::of($data)
+            ->addIndexColumn()
+            ->addColumn('title', function($row) {
+                return $row->title;
+            })
+            ->addColumn('slug', function($row) {
+                return $row->slug;
+            })
+            ->addColumn('keywords', function($row) {
+                return $row->keywords;
+            })
+            ->addColumn('action', function($row) {
+                return $row->action;
+            })
+            ->make(true);
         }
         // $data['blogs'] = Blog::all();
         $data['title'] = 'Blogs';

@@ -28,7 +28,28 @@
             var table = $('.table').DataTable({
                 processing: true,
                 serverSide: false,
-                ajax: "{{ route('blog.index') }}"
+                ajax: "{{ route('blog.index') }}",
+                columns: [{
+                        data: 'id',
+                        name: 'id',
+                    },
+                    {
+                        data: 'title',
+                        name: 'title',
+                    },
+                    {
+                        data: 'slug',
+                        name: 'slug',
+                    },
+                    {
+                        data: 'keywords',
+                        name: 'keywords',
+                    },
+                    {
+                        data: 'action',
+                        name: 'action',
+                    },
+                ]
             });
         });
     </script>
