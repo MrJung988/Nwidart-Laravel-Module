@@ -32,7 +32,8 @@
                             <td class="text-center">
                                 <div class="checkbox" style="margin-top: 0px;margin-bottom: 0px;">
                                     <input id="status-{{ $user->name }}" class="magic-checkbox users" type="checkbox"
-                                        name="user_id[]" value="{{ $user->id }}" {{ $user->status  == 'active' ? 'checked' : '' }}>
+                                        name="user_id[]" value="{{ $user->id }}"
+                                        {{ $user->status == 'active' ? 'checked' : '' }}>
                                     <label for="status-{{ $user->name }}" style="color: #000023;"></label>
                                 </div>
                             </td>
@@ -48,7 +49,8 @@
                                 @endif
                             </td>
                             <td class="text-center">
-                                <a href="{{ route('users.cards', $user->id) }}"><span class="badge text-bg-primary">Print Card</span></a>
+                                <a href="{{ route('users.cards', $user->id) }}"><span class="badge text-bg-primary">Print
+                                        Card</span></a>
                             </td>
                         </tr>
                     @endforeach
@@ -60,21 +62,22 @@
         </form>
     </div>
 
-    @push('js')
-        <script type="text/javascript">
-            $(function() {
-                $('#select-all').click(function() {
-                    $(this).closest('form').find('input.users').prop('checked', $(this).is(':checked'));
-                });
-            });
-        </script>
-
-        {{-- Data tables --}}
-        <script>
-            $(document).ready(function() {
-                $('#myTable').DataTable();
-            });
-        </script>
-    @endpush
 
 @endsection
+
+@push('js')
+    <script type="text/javascript">
+        $(function() {
+            $('#select-all').click(function() {
+                $(this).closest('form').find('input.users').prop('checked', $(this).is(':checked'));
+            });
+        });
+    </script>
+
+    {{-- Data tables --}}
+    <script>
+        $(document).ready(function() {
+            $('#myTable').DataTable();
+        });
+    </script>
+@endpush

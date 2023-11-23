@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'user', 'middleware' => 'auth'], function () {
     Route::get('/', 'UserController@index')->name('users.index');
+    Route::get('/new-user', 'NewUserController@index')->name('new.users.index');
     Route::get('/create', 'UserController@create')->name('users.create');
     Route::post('/store', 'UserController@store')->name('users.store');
     Route::get('/user-card-print/{id}', 'UserController@printCard')->name('users.cards');

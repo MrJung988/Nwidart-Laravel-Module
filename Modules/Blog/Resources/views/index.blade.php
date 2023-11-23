@@ -2,7 +2,7 @@
 
 @section('card-body')
     <section class="container mt-5">
-        <table class="table table-hover yajra-datatables">
+        <table id="dataTable" class="table table-hover yajra-datatables">
             <thead>
                 <tr>
                     <th>S.N.</th>
@@ -25,10 +25,10 @@
 @push('js')
     <script>
         $(function() {
-            var table = $('.table').DataTable({
+            var table = $('#dataTable').DataTable({
                 processing: true,
-                serverSide: false,
-                ajax: "{{ route('blog.index') }}",
+                serverSide: true,
+                // ajax: "{{ route('blog.index') }}",
                 columns: [{
                         data: 'id',
                         name: 'id',

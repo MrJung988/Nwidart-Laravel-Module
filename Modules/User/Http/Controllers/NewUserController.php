@@ -1,14 +1,13 @@
 <?php
 
-namespace Modules\Blog\Http\Controllers;
+namespace Modules\User\Http\Controllers;
 
-use App\Models\Blog;
+use App\Models\User;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Yajra\DataTables\Facades\DataTables;
 
-class BlogController extends Controller
+class NewUserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,31 +16,16 @@ class BlogController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $data = Blog::all();
-            return DataTables::of($data)
-            ->addIndexColumn()
-            ->addColumn('title', function($row) {
-                return $row->title;
-            })
-            ->addColumn('slug', function($row) {
-                return $row->slug;
-            })
-            ->addColumn('keywords', function($row) {
-                return $row->keywords;
-            })
-            ->addColumn('action', function($row) {
-                return '10';
-            })
-            ->make(true);
+            $data = User::all();
         }
-        
-        // $data['blogs'] = Blog::all();
-        $data['title'] = 'Blogs';
-        $data['heading'] = 'Blog';
+
+        $data['title'] = 'Users Details';
+        $data['heading'] = 'Users Details';
         $data['header_button'] = route('users.create');
-        $data['header_button_name'] = 'Add Blog';
-        $data['breadcrumbs'] =   '<a href="' . route('home') . '" class="text-decoration-none">Home</a> / <a href="" class="text-muted" active> Blogs </a>';
-        return view('blog::index', $data);
+        $data['header_button_name'] = 'Add User';
+        $data['breadcrumbs'] =   '<a href="' . route('home') . '" class="text-decoration-none">Home</a> / <a href="" class="text-muted" active> Users </a>';
+
+        return view('user::new.index', $data);
     }
 
     /**
@@ -50,7 +34,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('blog::create');
+        return view('user::create');
     }
 
     /**
@@ -70,7 +54,7 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-        return view('blog::show');
+        return view('user::show');
     }
 
     /**
@@ -80,7 +64,7 @@ class BlogController extends Controller
      */
     public function edit($id)
     {
-        return view('blog::edit');
+        return view('user::edit');
     }
 
     /**

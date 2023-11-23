@@ -332,6 +332,11 @@ return [
             'icon'        => 'fas fa-fw fa-user',
         ],
         [
+            'text'        => 'Users Management(New)',
+            'route'         => 'new.users.index',
+            'icon'        => 'fas fa-fw fa-user',
+        ],
+        [
             'text'        => 'Send OTP',
             'route'         => 'otp.send',
             'icon'        => 'fas fa-fw fa-wave-square',
@@ -346,6 +351,11 @@ return [
             'route'         => 'guzzlehttp',
             'icon'        => 'fas fa-fw fa-water',
         ],
+        [
+            'text' => 'Calculation',
+            'route' => 'calculation',
+            'icon' => 'fas fa-fw fa-calculator',
+        ]
     ],
 
     /*
@@ -384,7 +394,7 @@ return [
 
     'plugins' => [
         'Datatables' => [
-            'active' => true,
+            'active' => false,
             'files' => [
                 [
                     'type' => 'js',
