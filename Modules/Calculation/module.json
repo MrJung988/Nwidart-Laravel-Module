@@ -1,0 +1,13 @@
+{
+    "name": "Calculation",
+    "alias": "calculation",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Calculation\\Providers\\CalculationServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

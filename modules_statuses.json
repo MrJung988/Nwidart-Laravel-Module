@@ -6,5 +6,6 @@
     "Teachers": true,
     "Company": true,
     "OTP": true,
-    "GuzzleHttp": true
+    "GuzzleHttp": true,
+    "Calculation": true
 }
