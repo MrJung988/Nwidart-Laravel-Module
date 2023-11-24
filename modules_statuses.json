@@ -7,5 +7,6 @@
     "Company": true,
     "OTP": true,
     "GuzzleHttp": true,
-    "Calculation": true
+    "Calculation": true,
+    "Multiform": true
 }

@@ -1,0 +1,13 @@
+{
+    "name": "Multiform",
+    "alias": "multiform",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Multiform\\Providers\\MultiformServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

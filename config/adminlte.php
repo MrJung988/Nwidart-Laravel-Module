@@ -358,8 +358,8 @@ return [
         ],
         [
             'text' => 'Multi-form',
-            'route' => 'multi-form.index',
-            'icon' => 'fas fa-fw fa-form',
+            'route' => 'admin.dashboard',
+            'icon' => 'fas fa-fw fa-share-square',
         ]
     ],
 
