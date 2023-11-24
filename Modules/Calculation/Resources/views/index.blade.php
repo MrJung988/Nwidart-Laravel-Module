@@ -1,9 +1,7 @@
-@extends('calculation::layouts.master')
+@extends('common.common')
 
-@section('content')
-    <h1>Hello World</h1>
+@section('card-header', 'Calculations')
 
-    <p>
-        This view is loaded from module: {!! config('calculation.name') !!}
-    </p>
+@section('card-body')
+    Simple Calculator:
 @endsection

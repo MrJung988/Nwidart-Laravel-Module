@@ -14,7 +14,12 @@ class CalculationController extends Controller
      */
     public function index()
     {
-        return view('calculation::index');
+        $data['title'] = 'Calculations';
+        $data['heading'] = 'Calculations';
+        $data['header_button'] = false;
+        $data['breadcrumbs'] =   '<a href="' . route('home') . '" class="text-decoration-none">Home</a> / <a href="" class="text-muted" active> Calculation </a>';
+
+        return view('calculation::index', $data);
     }
 
     /**

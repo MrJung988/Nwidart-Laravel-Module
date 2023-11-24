@@ -11,6 +11,9 @@
 |
 */
 
-Route::prefix('calculation')->group(function() {
-    Route::get('/', 'CalculationController@index');
+use Illuminate\Support\Facades\Route;
+use Modules\Calculation\Http\Controllers\CalculationController;
+
+Route::group(['prefix' => 'calculation'], function () {
+    Route::get('/', [CalculationController::class, 'index'])->name('calculation.index');
 });

@@ -353,7 +353,7 @@ return [
         ],
         [
             'text' => 'Calculation',
-            'route' => 'calculation',
+            'route' => 'calculation.index',
             'icon' => 'fas fa-fw fa-calculator',
         ]
     ],
