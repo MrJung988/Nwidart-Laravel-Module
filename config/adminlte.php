@@ -292,12 +292,12 @@ return [
     'menu' => [
         // Navbar items:
         [
-            'type'         => 'navbar-search',
-            'text'         => 'search',
+            'type' => 'navbar-search',
+            'text' => 'search',
             'topnav_right' => true,
         ],
         [
-            'type'         => 'fullscreen-widget',
+            'type' => 'fullscreen-widget',
             'topnav_right' => true,
         ],
 
@@ -308,53 +308,58 @@ return [
         ],
         [
             'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
+            'url' => 'admin/blog',
+            'can' => 'manage-blog',
         ],
         [
-            'text'        => 'Dashboard',
-            'route'         => 'admin.dashboard',
-            'icon'        => 'fas fa-fw fa-tachometer-alt',
+            'text' => 'Dashboard',
+            'route' => 'admin.dashboard',
+            'icon' => 'fas fa-fw fa-tachometer-alt',
         ],
         [
-            'text'        => 'Blog',
-            'route'         => 'blog.index',
-            'icon'        => 'fas fa-fw fa-blog',
+            'text' => 'Blog',
+            'route' => 'blog.index',
+            'icon' => 'fas fa-fw fa-blog',
         ],
         [
-            'text'        => 'Company Management',
-            'route'         => 'company.index',
-            'icon'        => 'fas fa-fw fa-building',
+            'text' => 'Company Management',
+            'route' => 'company.index',
+            'icon' => 'fas fa-fw fa-building',
         ],
         [
-            'text'        => 'Users Management',
-            'route'         => 'users.index',
-            'icon'        => 'fas fa-fw fa-user',
+            'text' => 'Users Management',
+            'route' => 'users.index',
+            'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text'        => 'Users Management(New)',
-            'route'         => 'new.users.index',
-            'icon'        => 'fas fa-fw fa-user',
+            'text' => 'Users Management(New)',
+            'route' => 'new.users.index',
+            'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text'        => 'Send OTP',
-            'route'         => 'otp.send',
-            'icon'        => 'fas fa-fw fa-wave-square',
+            'text' => 'Send OTP',
+            'route' => 'otp.send',
+            'icon' => 'fas fa-fw fa-wave-square',
         ],
         [
-            'text'        => 'Test OTP',
-            'route'         => 'otp.test',
-            'icon'        => 'fas fa-fw fa-wave-square',
+            'text' => 'Test OTP',
+            'route' => 'otp.test',
+            'icon' => 'fas fa-fw fa-wave-square',
         ],
         [
-            'text'        => 'Guzzle Http',
-            'route'         => 'guzzlehttp',
-            'icon'        => 'fas fa-fw fa-water',
+            'text' => 'Guzzle Http',
+            'route' => 'guzzlehttp',
+            'icon' => 'fas fa-fw fa-water',
         ],
         [
             'text' => 'Calculation',
             'route' => 'calculation.index',
             'icon' => 'fas fa-fw fa-calculator',
+        ],
+        [
+            'text' => 'Multi-form',
+            'route' => 'multi-form.index',
+            'icon' => 'fas fa-fw fa-form',
         ]
     ],
 
