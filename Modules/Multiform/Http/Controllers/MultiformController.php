@@ -14,7 +14,12 @@ class MultiformController extends Controller
      */
     public function index()
     {
-        return view('multiform::index');
+        $data['title'] = 'Multiform';
+        $data['heading'] = 'Multiform';
+        $data['header_button'] = false;
+        $data['breadcrumbs'] =   '<a href="' . route('home') . '" class="text-decoration-none">Home</a> / <a href="" class="text-muted" active> Multiform </a>';
+
+        return view('multiform::index', $data);
     }
 
     /**

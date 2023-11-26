@@ -11,6 +11,9 @@
 |
 */
 
-Route::prefix('multiform')->group(function() {
-    Route::get('/', 'MultiformController@index');
+use Illuminate\Support\Facades\Route;
+use Modules\Multiform\Http\Controllers\MultiformController;
+
+Route::group(['prefix' => 'multiform'], function () {
+    Route::get('/', [MultiformController::class, 'index'])->name('multiform.index');
 });

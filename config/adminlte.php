@@ -358,7 +358,7 @@ return [
         ],
         [
             'text' => 'Multi-form',
-            'route' => 'admin.dashboard',
+            'route' => 'multiform.index',
             'icon' => 'fas fa-fw fa-share-square',
         ]
     ],

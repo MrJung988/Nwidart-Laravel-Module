@@ -1,6 +1,8 @@
-@extends('multiform::layouts.master')
+@extends('common.common')
 
-@section('content')
+@section('card-header', 'Multiform')
+
+@section('card-body')
     <h1>Hello World</h1>
 
     <p>
