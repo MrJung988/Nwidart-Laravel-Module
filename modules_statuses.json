@@ -8,5 +8,6 @@
     "OTP": true,
     "GuzzleHttp": true,
     "Calculation": true,
-    "Multiform": true
+    "Multiform": true,
+    "Task": true
 }

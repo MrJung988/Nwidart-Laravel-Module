@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 
 @section('content')
-    <div class="container mt-5 mb-5">
+    <div class="container">
         <div class="d-flex justify-content-between py-4">
 
             <h3 class="text-center text-info">{{ $heading ?? '' }}</h3>
@@ -16,11 +16,11 @@
         </div>
         <div class="card">
             <div class="card-header">
-                <div class="card-header bg-light d-flex justify-content-between align-items-center">
-                    <div class="card-title">
+                <div class="p-1 bg-light d-flex justify-content-between align-items-center">
+                    <div class="card-title d-flex">
                         @isset($back_button_route)
                             <a href="{{ $back_button_route }}">
-                                <i class="fas fa-arrow-left"></i>
+                                <i class="fas fa-arrow-left mr-3"></i>
                             </a>
                         @endisset
                         <h5 class="mt-1 mb-n2">{{ $heading }}</h5>

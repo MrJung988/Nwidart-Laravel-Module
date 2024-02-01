@@ -2,9 +2,9 @@
 
 @section('card-body')
     <section class="container mt-5">
-        <div id="processingIndicator" class="text-center" style="display: none;">
+        {{-- <div id="processingIndicator" class="text-center" style="display: none;">
             <p style="font-size: 50px;"><i class="fa fa-spinner fa-spin"></i></p>
-        </div>
+        </div> --}}
         <table id="dataTable" class="table table-hover yajra-datatables">
             <thead>
                 <tr>
@@ -21,10 +21,6 @@
     </section>
 @endsection
 
-@push('css')
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
-@endpush
-
 @push('js')
     <script>
         $(function() {
@@ -40,12 +36,12 @@
                     data: function(d) {
                         d._token = "{{ csrf_token() }}";
                     },
-                    beforeSend: function() {
-                        $('#processingIndicator').show();
-                    },
-                    complete: function() {
-                        $('#processingIndicator').hide();
-                    },
+                    // beforeSend: function() {
+                    //     $('#processingIndicator').show();
+                    // },
+                    // complete: function() {
+                    //     $('#processingIndicator').hide();
+                    // },
                 },
                 columns: [{
                         data: 'id',

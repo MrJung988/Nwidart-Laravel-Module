@@ -7,3 +7,9 @@
 
     {{-- Data Tables --}}
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap4.min.css">
+
+    <style>
+        div.dataTables_wrapper div.dataTables_length select {
+            width: 60px !important;
+        }
+    </style>
