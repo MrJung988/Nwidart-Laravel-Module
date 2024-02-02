@@ -63,7 +63,6 @@
 
             $('#taskTable tbody').on('click', '.complete-task', function() {
                 var taskId = $(this).data('id');
-                var status = $(this).data('status');
                 var confirmed = confirm('Are you sure you want to complete this task?');
 
                 if (confirmed) {
@@ -71,7 +70,7 @@
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         },
-                        url: '/task/complete/' + taskId + '/' + status,
+                        url: '/task/complete/' + taskId,
                         method: 'POST',
                         success: function(response) {
                             location.reload();

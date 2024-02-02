@@ -29,12 +29,12 @@ class TaskController extends Controller
                     })
                     ->addColumn('status', function ($row) {
                         if ($row->completed) {
-                            return '<span class="badge badge-success">Complete</span>';
+                            return '<span class="badge badge-dark">Completed</span>';
                         }
                         return '<span class="badge badge-info">Pending</span>';
                     })
                     ->addColumn('action', function ($data) {
-                        return '<button class="text-center badge badge-sm badge-success complete-task" data-id=" ' . $data->id . ' " data-status="' . $data->completed . '" title="Complete Task"><i class="fas fa-check"></i> Done</button>';
+                        return '<button class="text-center badge badge-sm border-0 badge-success complete-task" data-id=" ' . $data->id . ' " title="Complete Task"' . ($data->completed == 1 ? 'disabled' : '') . '><i class="fas fa-check"></i> Done</button>';
                         // return view('templates.index-action', [
                         //     'id' => $data->id, 'route' => 'admin.task.',
                         // ])->render();
@@ -137,12 +137,8 @@ class TaskController extends Controller
         //
     }
 
-    public function complete($id, $status)
+    public function complete($id)
     {
-        if ($status == 1) {
-            return redirect()->back()->with('error', 'Task Already Completed!');
-        }
-
         $task = Task::find($id);
         $task->completed = 1;
         $task->save();

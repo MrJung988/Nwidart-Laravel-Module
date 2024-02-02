@@ -20,5 +20,5 @@ Route::group(['prefix' => 'task', 'as' => 'admin.task.'], function () {
     Route::post('/', [TaskController::class, 'store'])->name('store');
     Route::post('edit', [TaskController::class, 'edit'])->name('edit');
     Route::delete('delete', [TaskController::class, 'destroy'])->name('destroy');
-    Route::post('complete/{id}/{status}', [TaskController::class, 'complete'])->name('task.complete');
+    Route::post('complete/{id}', [TaskController::class, 'complete'])->name('task.complete');
 });
