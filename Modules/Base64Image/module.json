@@ -1,0 +1,13 @@
+{
+    "name": "Base64Image",
+    "alias": "base64image",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Base64Image\\Providers\\Base64ImageServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

@@ -322,6 +322,11 @@ return [
             'icon' => 'fas fa-fw fa-tasks',
         ],
         [
+            'text' => 'Base64 Image Encoder',
+            'route' => 'admin.base64image.index',
+            'icon' => 'fas fa-fw fa-image',
+        ],
+        [
             'text' => 'Blog',
             'route' => 'blog.index',
             'icon' => 'fas fa-fw fa-blog',

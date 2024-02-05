@@ -9,5 +9,6 @@
     "GuzzleHttp": true,
     "Calculation": true,
     "Multiform": true,
-    "Task": true
+    "Task": true,
+    "Base64Image": true
 }
